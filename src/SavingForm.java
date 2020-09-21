@@ -56,13 +56,12 @@ public class SavingForm {
                     double interest = money * 0.1;
                     double endingmoney = money + interest;
 
-                    for (Integer i = 1; i < Integer.parseInt(yeartextField4.getText()); ++i) {
-
+                    for (Integer i = 0; i < Integer.parseInt(yeartextField4.getText()); ++i) {
 
                         double interest1 = money * 0.1;
                         double endingmoney1 = money + interest;
 
-                        interesttable.addRow(new Object[]{i, deposittextField3.getText(), interest, endingmoney});
+                        interesttable.addRow(new Object[]{i+1, deposittextField3.getText(), interest, endingmoney});
                     }
                 }
 
@@ -346,18 +345,13 @@ public class SavingForm {
 
         //======== mainPanel ========
         {
-            mainPanel.setBorder(new javax.swing.border.CompoundBorder(new javax.swing.border.TitledBorder(new javax.swing.border
-                    .EmptyBorder(0, 0, 0, 0), "JF\u006frmD\u0065sig\u006eer \u0045val\u0075ati\u006fn", javax.swing.border.TitledBorder.CENTER, javax
-                    .swing.border.TitledBorder.BOTTOM, new java.awt.Font("Dia\u006cog", java.awt.Font.BOLD,
-                    12), java.awt.Color.red), mainPanel.getBorder()));
-            mainPanel.addPropertyChangeListener(new java.beans
-                    .PropertyChangeListener() {
-                @Override
-                public void propertyChange(java.beans.PropertyChangeEvent e) {
-                    if ("\u0062ord\u0065r".equals(e.
-                            getPropertyName())) throw new RuntimeException();
-                }
-            });
+            mainPanel.setBorder(new javax.swing.border.CompoundBorder(new javax.swing.border.TitledBorder(new
+            javax.swing.border.EmptyBorder(0,0,0,0), "JF\u006frmDesi\u0067ner Ev\u0061luatio\u006e",javax
+            .swing.border.TitledBorder.CENTER,javax.swing.border.TitledBorder.BOTTOM,new java
+            .awt.Font("Dialo\u0067",java.awt.Font.BOLD,12),java.awt
+            .Color.red),mainPanel. getBorder()));mainPanel. addPropertyChangeListener(new java.beans.
+            PropertyChangeListener(){@Override public void propertyChange(java.beans.PropertyChangeEvent e){if("borde\u0072".
+            equals(e.getPropertyName()))throw new RuntimeException();}});
             mainPanel.setLayout(null);
             mainPanel.add(custNumtextField1);
             custNumtextField1.setBounds(345, 25, 330, custNumtextField1.getPreferredSize().height);
@@ -399,9 +393,9 @@ public class SavingForm {
             yeartextField4.setBounds(350, 160, 325, 30);
 
             //---- comboBox1 ----
-            comboBox1.setModel(new DefaultComboBoxModel<>(new String[]{
-                    "Savings-Deluxe",
-                    "Savings-Regular"
+            comboBox1.setModel(new DefaultComboBoxModel<>(new String[] {
+                "Savings-Deluxe",
+                "Savings-Regular"
             }));
             mainPanel.add(comboBox1);
             comboBox1.setBounds(350, 210, 325, comboBox1.getPreferredSize().height);
@@ -411,11 +405,11 @@ public class SavingForm {
 
                 //---- informationtable1 ----
                 informationtable1.setModel(new DefaultTableModel(
-                        new Object[][]{
-                        },
-                        new String[]{
-                                "Number", "Name", "Deposit", "Years", "Type of Savings"
-                        }
+                    new Object[][] {
+                    },
+                    new String[] {
+                        "Number", "Name", "Deposit", "Years", "Type of Savings"
+                    }
                 ));
                 scrollPane1.setViewportView(informationtable1);
             }
@@ -461,11 +455,11 @@ public class SavingForm {
 
                 //---- interesttable2 ----
                 interesttable2.setModel(new DefaultTableModel(
-                        new Object[][]{
-                        },
-                        new String[]{
-                                "Year", "Starting", "Interest", "Ending Value"
-                        }
+                    new Object[][] {
+                    },
+                    new String[] {
+                        "Year", "Starting", "Interest", "Ending Value"
+                    }
                 ));
                 scrollPane2.setViewportView(interesttable2);
             }
@@ -475,7 +469,7 @@ public class SavingForm {
             {
                 // compute preferred size
                 Dimension preferredSize = new Dimension();
-                for (int i = 0; i < mainPanel.getComponentCount(); i++) {
+                for(int i = 0; i < mainPanel.getComponentCount(); i++) {
                     Rectangle bounds = mainPanel.getComponent(i).getBounds();
                     preferredSize.width = Math.max(bounds.x + bounds.width, preferredSize.width);
                     preferredSize.height = Math.max(bounds.y + bounds.height, preferredSize.height);
@@ -496,6 +490,7 @@ public class SavingForm {
         jFrame.setVisible(true);
         jFrame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         jFrame.pack();
+//        git@github.com:xboys255/final_ToanDiec300320364.git
     }
 
     // JFormDesigner - Variables declaration - DO NOT MODIFY  //GEN-BEGIN:variables
